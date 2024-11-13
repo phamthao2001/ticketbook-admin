@@ -2,13 +2,14 @@ import type { AxiosInstance } from 'axios'
 import axios from 'axios'
 
 const BASE_URL = import.meta.env.BASE_URL
+const timeout = 10000
 
 const apiClient: AxiosInstance = axios.create({
   baseURL: BASE_URL,
   headers: {
     'Content-Type': 'application/json',
   },
-  timeout: 10000,
+  timeout,
 })
 
 apiClient.interceptors.request.use(
